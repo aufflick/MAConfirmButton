@@ -30,8 +30,8 @@
 - (void)setTintColor:(UIColor *)color;
 - (void)reset;
 
-- (BOOL)disabled;
-- (BOOL)selected;
-- (BOOL)confirmed;
+- (BOOL)isDisabled;
+- (BOOL)isSelected;
+- (BOOL)isConfirmed;
 
 @end

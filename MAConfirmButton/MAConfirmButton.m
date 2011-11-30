@@ -115,17 +115,17 @@
     [self toggle];
 }
 
-- (BOOL)disabled
+- (BOOL)isDisabled
 {
     return disabled ? YES : NO;
 }
 
-- (BOOL)selected
+- (BOOL)isSelected
 {
     return selected;
 }
 
-- (BOOL)confirmed
+- (BOOL)isCconfirmed
 {
     return confirmed;
 }
