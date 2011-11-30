@@ -107,6 +107,29 @@
 	return self;
 }
 
+- (void)reset
+{
+    disabled = NO;
+    selected = NO;
+    confirmed = NO;
+    [self toggle];
+}
+
+- (BOOL)disabled
+{
+    return disabled ? YES : NO;
+}
+
+- (BOOL)selected
+{
+    return selected;
+}
+
+- (BOOL)confirmed
+{
+    return confirmed;
+}
+
 - (void)toggle{
 		
 	self.titleLabel.alpha = 0;
@@ -124,6 +147,8 @@
 		size = [confirm sizeWithFont:[UIFont boldSystemFontOfSize:kFontSize]];
 	}else{
 		[self setTitle:title forState:UIControlStateNormal];
+        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];		
+		[self setTitleShadowColor:[UIColor colorWithWhite:0 alpha:0.5] forState:UIControlStateNormal];
 		size = [title sizeWithFont:[UIFont boldSystemFontOfSize:kFontSize]];
 	}
 	

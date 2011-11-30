@@ -11,6 +11,7 @@
 @class MAConfirmButtonOverlay;
 
 @interface MAConfirmButton : UIButton {
+    
 
 @private
 	BOOL selected;
@@ -27,5 +28,10 @@
 - (void)disableWithTitle:(NSString *)disabledString;
 - (void)setAnchor:(CGPoint)anchor;
 - (void)setTintColor:(UIColor *)color;
+- (void)reset;
+
+- (BOOL)disabled;
+- (BOOL)selected;
+- (BOOL)confirmed;
 
 @end

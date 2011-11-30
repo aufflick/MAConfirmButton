@@ -10,6 +10,9 @@
 
 @interface SampleViewController ()
 
+@property (nonatomic, retain) MAConfirmButton * defaultButton;
+@property (nonatomic, retain) MAConfirmButton * tintedButton;
+
 - (void)setupView;
 - (void)resetUI;
 - (void)confirmAction:(id)sender;
@@ -17,6 +20,9 @@
 @end
 
 @implementation SampleViewController
+
+@synthesize defaultButton;
+@synthesize tintedButton;
 
 - (void)dealloc{
     [super dealloc];
@@ -38,12 +44,12 @@
 		[view removeFromSuperview];
 	}
 
-	MAConfirmButton *defaultButton = [MAConfirmButton buttonWithTitle:@"$9.99" confirm:@"BUY NOW"];
+	self.defaultButton = [MAConfirmButton buttonWithTitle:@"$9.99" confirm:@"BUY NOW"];
 	[defaultButton addTarget:self action:@selector(confirmAction:) forControlEvents:UIControlEventTouchUpInside];
 	[defaultButton setAnchor:CGPointMake(270, 50)];
 	[self.view addSubview:defaultButton];
 	
-	MAConfirmButton *tintedButton = [MAConfirmButton buttonWithTitle:@"Tinted" confirm:@"Confirm String"];
+	self.tintedButton = [MAConfirmButton buttonWithTitle:@"Tinted" confirm:@"Confirm String"];
 	[tintedButton addTarget:self action:@selector(confirmAction:) forControlEvents:UIControlEventTouchUpInside];	
 	[tintedButton setTintColor:[UIColor colorWithRed:0.176 green:0.569 blue:0.820 alpha:1]];
 	[tintedButton setAnchor:CGPointMake(270, 100)];	
@@ -62,7 +68,10 @@
 }
 
 - (void)resetUI{
-	[self setupView];
+	//[self setupView];
+    [self.defaultButton reset];
+    [self.tintedButton reset];
+    [resetButton reset];
 }
 
 - (void)confirmAction:(id)sender{
