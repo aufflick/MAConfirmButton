@@ -125,7 +125,7 @@
     return selected;
 }
 
-- (BOOL)isCconfirmed
+- (BOOL)isConfirmed
 {
     return confirmed;
 }
